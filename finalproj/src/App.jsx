@@ -3,7 +3,7 @@ import "./App.css";
 import SignUp from "./Pages/SignUp";
 import LogIn from "./Pages/LogIn";
 import { Admin } from "./Administration/Admin";
-import { Categories } from "./Administration/Categories";
+import Categories from "./Administration/Categories/Categories";
 import Statistics from "./Administration/Statistics";
 import Customers from "./Administration/Customers";
 import Products from "./Administration/Products";
