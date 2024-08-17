@@ -1,9 +1,24 @@
 import React from "react";
 import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "../usersSlice";
 const SignUp = () => {
-  const [newUser, setNewUser] = useState({});
+  const [newUser, setNewUser] = useState({
+    fname: "",
+    lname: "",
+    username: "",
+    password: "",
+    show: "",
+    status: "user",
+  });
+  const dispatch = useDispatch();
 
+  const addingUser = () => {
+    console.log(newUser);
+    dispatch(addUser(newUser));
+  };
+  const users = useSelector((state) => state.usersD.users);
+  console.log(users);
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h2>New User Registration</h2>
@@ -43,7 +58,7 @@ const SignUp = () => {
         Allow Others to see my orders
       </span>
 
-      <button onClick={() => console.log(newUser)}>Create</button>
+      <button onClick={addingUser}>Create</button>
     </div>
   );
 };
