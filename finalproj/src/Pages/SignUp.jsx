@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../usersSlice";
+import { addDoc, collection } from "firebase/firestore";
+import db from "../firebase";
+
 const SignUp = () => {
   const [newUser, setNewUser] = useState({
     fname: "",
@@ -11,14 +12,11 @@ const SignUp = () => {
     show: "",
     status: "user",
   });
-  const dispatch = useDispatch();
 
-  const addingUser = () => {
-    console.log(newUser);
-    dispatch(addUser(newUser));
+  const addingUser = async () => {
+    await addDoc(collection(db, "users"), newUser);
   };
-  const users = useSelector((state) => state.usersD.users);
-  console.log(users);
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h2>New User Registration</h2>
