@@ -10,6 +10,7 @@ import Products from "./Administration/Products";
 import Orders from "./Registered/Orders";
 import Account from "./Registered/Account";
 import LogOut from "./Registered/LogOut";
+import User from "./Registered/User";
 function App() {
   return (
     <>
@@ -22,7 +23,7 @@ function App() {
           <Route path="Customers" element={<Customers />} />
           <Route path="Statistics" element={<Statistics />} />
         </Route>
-        <Route path="/User">
+        <Route path="/User" element={<User />}>
           <Route path="Orders" element={<Orders />} />
           <Route path="Account" element={<Account />} />
           <Route path="LogOut" element={<LogOut />} />
