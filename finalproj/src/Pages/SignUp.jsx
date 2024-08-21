@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import db from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [newUser, setNewUser] = useState({
     fname: "",
     lname: "",
@@ -15,6 +17,7 @@ const SignUp = () => {
 
   const addingUser = async () => {
     await addDoc(collection(db, "users"), newUser);
+    navigate("/");
   };
 
   return (

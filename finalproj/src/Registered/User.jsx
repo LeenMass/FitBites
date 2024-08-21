@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link, Outlet } from "react-router-dom";
 const User = () => {
   return (
     <div>
@@ -13,10 +13,11 @@ const User = () => {
       <Link to="Account" style={{ padding: "10px" }}>
         Account
       </Link>
+
+      <Outlet />
       <Link to="LogOut" style={{ padding: "10px" }}>
         LogOut
       </Link>
-      <Outlet />
     </div>
   );
 };

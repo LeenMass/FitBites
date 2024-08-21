@@ -18,6 +18,9 @@ export const Admin = () => {
         Statistics
       </Link>
       <Outlet />
+      <Link to="LogOut" style={{ padding: "10px" }}>
+        LogOut
+      </Link>
     </div>
   );
 };
