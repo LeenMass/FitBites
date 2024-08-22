@@ -45,6 +45,7 @@ const LogIn = () => {
       alert("no account");
     } else if (m.username == user.username && m.password == user.password) {
       sessionStorage["id"] = m.id;
+      sessionStorage["status"] = m.status;
       if (m.status == "admin") {
         navigate("/Admin");
       } else {

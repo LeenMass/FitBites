@@ -1,22 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 } from "uuid";
 const initialState = {
-    users: []
+    categories: []
 }
 const usersSlice = createSlice({
-    name: "user",
+    name: "category",
     initialState,
     reducers: {
-        addUser: ((state, action) => {
-            const user = {
+        loadCategories: (state, action) => {
+            [state.categories, ...action.payload]
+        },
+        addcategory: ((state, action) => {
+            const category = {
                 id: v4(),
                 ...action.payload
             }
-            { state.users.push(user) }
+            { state.categories.push(category) }
         })
     }
 
 })
-export const { addUser } = usersSlice.actions;
+export const { addcategory, loadCategories } = usersSlice.actions;
 
 export default usersSlice.reducer;

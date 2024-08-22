@@ -6,6 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const covertDate = () => {
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let current = day + "/" + month + "/" + year;
+    return current;
+  };
+  let z = covertDate();
   const [newUser, setNewUser] = useState({
     fname: "",
     lname: "",
@@ -13,6 +23,7 @@ const SignUp = () => {
     password: "",
     show: "",
     status: "user",
+    joinDate: z,
   });
 
   const addingUser = async () => {
