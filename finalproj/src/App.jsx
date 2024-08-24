@@ -6,21 +6,21 @@ import { Admin } from "./Administration/Admin";
 import Categories from "./Administration/Categories/Categories";
 import Statistics from "./Administration/Statistics";
 import Customers from "./Administration/Customers";
-import Products from "./Administration/Products";
 import Orders from "./Registered/Orders";
 import Account from "./Registered/Account";
 import LogOut from "./Registered/LogOut";
 import User from "./Registered/User";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import Products from "./Administration/Products";
 
 function App() {
   const lusogin = sessionStorage["id"];
   const status = sessionStorage["status"];
-  const [user, setUser] = useState(lusogin);
+
   const navigate = useNavigate();
   useEffect(() => {
     if (lusogin == undefined) {
-      navigate("/", { replace: false });
+      navigate("/", { replace: true });
     }
   }, []);
 
