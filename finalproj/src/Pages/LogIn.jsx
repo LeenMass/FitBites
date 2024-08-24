@@ -16,7 +16,6 @@ const LogIn = () => {
   const getUsers = () => {
     const q = query(collection(db, "users"));
     onSnapshot(q, (querySnapshot) => {
-      // console.log(querySnapshot);
       setUsers(
         querySnapshot.docs.map((doc) => {
           return {
