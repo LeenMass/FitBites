@@ -1,4 +1,10 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import {
+  redirect,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import "./App.css";
 import SignUp from "./Pages/SignUp";
 import LogIn from "./Pages/LogIn";
@@ -12,39 +18,44 @@ import LogOut from "./Registered/LogOut";
 import User from "./Registered/User";
 import { useEffect } from "react";
 import Products from "./Administration/Products";
+import AllProducts from "./Registered/AllProducts";
+import GetData from "./GetData";
 
 function App() {
-  const lusogin = sessionStorage["id"];
   const status = sessionStorage["status"];
-
+  const link = useLocation();
   const navigate = useNavigate();
-  useEffect(() => {
-    if (lusogin == undefined) {
-      navigate("/", { replace: true });
-    }
-  }, []);
-
+  console.log(link);
   return (
-    <Routes>
-      <Route path="/" element={<LogIn />}></Route>
-      <Route path="/SignUp" element={<SignUp />}></Route>
-      <Route path="*" element={<div>u dont have access</div>}></Route>;
-      {status == "admin" ? (
-        <Route path="/Admin" element={<Admin />}>
-          <Route path="Categories" element={<Categories />} />
-          <Route path="Products" element={<Products />} />
-          <Route path="Customers" element={<Customers />} />
-          <Route path="Statistics" element={<Statistics />} />{" "}
-          <Route path="LogOut" element={<LogOut />} />
-        </Route>
-      ) : (
-        <Route path="/User" element={<User />}>
-          <Route path="Orders" element={<Orders />} />
-          <Route path="Account" element={<Account />} />
-          <Route path="LogOut" element={<LogOut />} />
-        </Route>
-      )}
-    </Routes>
+    <>
+      <GetData />
+      <Routes>
+        <Route path="/" element={<LogIn />}></Route>
+        <Route path="/SignUp" element={<SignUp />}></Route>
+        <Route
+          path="*"
+          element={<div>u dont have access {history.back()}</div>}
+        ></Route>
+        ;
+        {status == "Admin" ? (
+          <Route path="/Admin" element={<Admin />}>
+            <Route path="Categories" element={<Categories />} />
+            <Route path="Products" element={<Products />} />
+            <Route path="Customers" element={<Customers />} />
+            <Route path="Statistics" element={<Statistics />} />{" "}
+            <Route path="LogOut" element={<LogOut />} />
+          </Route>
+        ) : (
+          <Route path="/User" element={<User />}>
+            <Route path="AllProducts" element={<AllProducts />} />
+
+            <Route path="Orders" element={<Orders />} />
+            <Route path="Account" element={<Account />} />
+            <Route path="LogOut" element={<LogOut />} />
+          </Route>
+        )}
+      </Routes>
+    </>
   );
 }
 

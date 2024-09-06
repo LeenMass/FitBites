@@ -5,10 +5,10 @@ const Category = ({ data }) => {
   const [edit, setEdit] = useState(false);
   const [updatetitle, setUpdateTitle] = useState({ title: data.title });
   const deleteCategory = async () => {
-    await deleteDoc(doc(db, "categories", data.id));
+    await deleteDoc(doc(db, "Categories", data.id));
   };
   const updateCategore = async () => {
-    await updateDoc(doc(db, "categories", data.id), updatetitle);
+    await updateDoc(doc(db, "Categories", data.id), updatetitle);
     setEdit(false);
   };
   return (

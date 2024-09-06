@@ -14,9 +14,10 @@ const Product = ({ data }) => {
     setProduct({ ...product, [name]: value });
   };
   const updateProduct = async () => {
-    await updateDoc(doc(db, "products", data.id), product);
+    await updateDoc(doc(db, "Products", product.id), product);
     setEdit(false);
   };
+  console.log(product.category);
   return (
     <>
       {edit ? (

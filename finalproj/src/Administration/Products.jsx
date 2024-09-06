@@ -8,24 +8,7 @@ import Product from "./Product";
 
 const Products = () => {
   const products = useSelector((state) => state.usersD.products);
-  const dispatch = useDispatch();
 
-  const getAllProducrs = () => {
-    const q = query(collection(db, "products"));
-    onSnapshot(q, (querySnapshot) => {
-      const products = querySnapshot.docs.map((doc) => {
-        return {
-          id: doc.id,
-          ...doc.data(),
-        };
-      });
-
-      dispatch(loadProducts(products));
-    });
-  };
-  useEffect(() => {
-    getAllProducrs();
-  }, []);
   return (
     <div>
       {products.map((product) => {

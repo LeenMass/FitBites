@@ -7,7 +7,7 @@ const AddCategory = () => {
   const [category, setCategore] = useState({ title: "" });
 
   const addCategory = async () => {
-    await addDoc(collection(db, "categories"), category);
+    await addDoc(collection(db, "Categories"), category);
   };
   return (
     <>
