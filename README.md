@@ -40,9 +40,9 @@ The frontend runs at [http://localhost:3000](http://localhost:3000).
 
 ---
 
-👨‍💻Author: **Leen Massarwy**
+👨‍💻 Author: **Leen Massarwy**
 
 ## 📄 License
 
-MIT License © 2025
+MIT License © 2024-2025
 
