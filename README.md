@@ -12,8 +12,10 @@
 ---
 
 ## ⚙️ Technologies
-
-
+- React
+- Axios
+- Firebase
+- Redux
 ---
 
 ## 🛠 Installation & Running
