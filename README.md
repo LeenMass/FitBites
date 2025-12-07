@@ -20,8 +20,10 @@
 
 ## 🛠 Installation & Running
 ```bash
-# Clone the repository
-
+# Clone the repository and navigate to the folder:
+git clone https://github.com/LeenMass/FitBites
+cd FitBites
+cd finalproj
 
 # Install dependencies
 npm install
