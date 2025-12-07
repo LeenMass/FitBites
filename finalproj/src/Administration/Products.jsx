@@ -1,9 +1,5 @@
-import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { loadProducts } from "../usersSlice";
-import { query, onSnapshot, collection } from "firebase/firestore";
-import { useDispatch } from "react-redux";
-import db from "../firebase";
+
 import Product from "./Product";
 
 const Products = () => {
