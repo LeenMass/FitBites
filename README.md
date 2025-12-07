@@ -28,7 +28,7 @@ npm install
 npm run dev
 ```
 
-The frontend runs at [http://localhost:3000](http://localhost:3000).  
+The Project runs at [http://localhost:3000](http://localhost:3000).  
 
 ---
 
