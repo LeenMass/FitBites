@@ -16,16 +16,14 @@ import Orders from "./Registered/Orders";
 import Account from "./Registered/Account";
 import LogOut from "./Registered/LogOut";
 import User from "./Registered/User";
-import { useEffect } from "react";
 import Products from "./Administration/Products";
 import AllProducts from "./Registered/AllProducts";
 import GetData from "./GetData";
 
-function App() {
+const App = () => {
   const status = sessionStorage["status"];
   const link = useLocation();
-  const navigate = useNavigate();
-  console.log(link);
+
   return (
     <>
       <GetData />
@@ -57,6 +55,6 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
 export default App;
