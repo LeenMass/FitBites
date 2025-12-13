@@ -1,10 +1,4 @@
-import {
-  redirect,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import SignUp from "./Pages/SignUp";
 import LogIn from "./Pages/LogIn";
@@ -22,7 +16,6 @@ import GetData from "./GetData";
 
 const App = () => {
   const status = sessionStorage["status"];
-  const link = useLocation();
 
   return (
     <>
