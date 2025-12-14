@@ -27,24 +27,22 @@ const App = () => {
           path="*"
           element={<div>u dont have access {history.back()}</div>}
         ></Route>
-        ;
-        {status == "Admin" ? (
-          <Route path="/Admin" element={<Admin />}>
-            <Route path="Categories" element={<Categories />} />
-            <Route path="Products" element={<Products />} />
-            <Route path="Customers" element={<Customers />} />
-            <Route path="Statistics" element={<Statistics />} />{" "}
-            <Route path="LogOut" element={<LogOut />} />
-          </Route>
-        ) : (
-          <Route path="/User" element={<User />}>
-            <Route path="AllProducts" element={<AllProducts />} />
 
-            <Route path="Orders" element={<Orders />} />
-            <Route path="Account" element={<Account />} />
-            <Route path="LogOut" element={<LogOut />} />
-          </Route>
-        )}
+        <Route path="/Admin" element={<Admin />}>
+          <Route path="Categories" element={<Categories />} />
+          <Route path="Products" element={<Products />} />
+          <Route path="Customers" element={<Customers />} />
+          <Route path="Statistics" element={<Statistics />} />{" "}
+          <Route path="LogOut" element={<LogOut />} />
+        </Route>
+
+        <Route path="/User" element={<User />}>
+          <Route path="AllProducts" element={<AllProducts />} />
+
+          <Route path="Orders" element={<Orders />} />
+          <Route path="Account" element={<Account />} />
+          <Route path="LogOut" element={<LogOut />} />
+        </Route>
       </Routes>
     </>
   );
