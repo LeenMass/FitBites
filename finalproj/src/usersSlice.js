@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "react-redux";
 import { v4 } from "uuid";
 const initialState = {
     categories: [],

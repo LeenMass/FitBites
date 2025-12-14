@@ -12,14 +12,14 @@ import LogOut from "./Registered/LogOut";
 import User from "./Registered/User";
 import Products from "./Administration/Products";
 import AllProducts from "./Registered/AllProducts";
-import GetData from "./GetData";
+// import GetData from "./GetData";
 
 const App = () => {
   const status = sessionStorage["status"];
 
   return (
     <>
-      <GetData />
+      {/* <GetData /> */}
       <Routes>
         <Route path="/" element={<LogIn />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
